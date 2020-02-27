@@ -1,10 +1,24 @@
+#fancy{
+	border-radius: 0.3em;
+	display: block;
+	margin: 1em auto;
+	padding: 0.3em;
+	width: 100%;
+}
+
+#fancy img{
+	width: 8%;
+}
+
 .caja{
 	align-items: center;
-	border: solid;
 	box-shadow: 0 0 0.5em #000;
 	display: flex;
 	height: 400px;
 	justify-content: space-around;
+	margin: 0 auto;
+	width: 80%;
+
 
 }
 
@@ -34,3 +48,50 @@
 	max-width: 100%;
 	max-height: 100%;
 }
+
+@media print{
+	.caja{
+		box-shadow: none;
+	}
+	#fancy, .cajitas1, .cajitas2{
+		display: none;
+	}
+	.caja .cajitas3{
+		width: 80%;
+	}
+}
+
+@keyframes isabella{
+	0%{
+		background: tomato;
+		border-radius: 50%
+	}
+	20%{
+		background: violet;
+	}
+	60%{
+		background: blue;
+	}
+	80%{
+		background: green;
+	}
+	100%{
+		background: yellow;
+	}
+}
+
+ @media screen and (max-width: 550px){
+ 	.caja{
+ 		flex-direction: column-reverse;
+ 		height: auto;
+ 		width: 100%;
+ 	}
+ 	.caja div{
+ 		width: 100%;
+
+ 	}
+.caja .cajitas2{
+	animation: isabella infinite 5s alternate;
+}
+
+ }
